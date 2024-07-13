@@ -22,13 +22,13 @@ class Rectangle {
   
     rotate () {
       const tmp = this.height;
-      this.height = width;
+      this.height = this.width;
       this.width = tmp;
     }
   
     double () {
       this.height *= 2;
-      this.widthh *= 2;
+      this.width *= 2;
     }
   }
   
