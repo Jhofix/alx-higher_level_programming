@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" PRINTS ALL STATES FROM A DATABASE:
-Usage:
+""" PRINTS ALL STATES FROM A DATABASE: """
+"""Usage:
 - Requires 3 command line arguments:
   username as uname, password as pwd
   and database name as db_name
