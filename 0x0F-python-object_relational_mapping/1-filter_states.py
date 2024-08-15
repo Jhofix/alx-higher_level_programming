@@ -1,6 +1,11 @@
 #!/usr/bin/python3
 """  lists all states with a name starting with N (upper N)
- from the database hbtn_0e_0_usa """
+ from the database hbtn_0e_0_usa 
+ Args:
+    username: username
+    password: password
+    database: database
+ """
 
 import MySQLdb as mysql
 import sys
