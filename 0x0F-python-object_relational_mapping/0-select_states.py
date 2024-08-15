@@ -10,9 +10,7 @@ database = sys.argv[3]
 
 
 def read_db(uname, pwd, db_name):
-    """ READS DATA FROM A DATABASE:
-    - Returns a tuple containing the data
-    """
+    """ READS DATA FROM A DATABASE """
     db = mysql.connect(host='localhost',
                        port=3306,
                        user=uname,
@@ -21,13 +19,13 @@ def read_db(uname, pwd, db_name):
     cursor = db.cursor()
     cursor.execute('SELECT * FROM states')
     reader = cursor.fetchall()
+    cursor.close
+    db.close
     return reader
 
 
 def print_db(data):
-    """ PRINT CONTENTS OF A DATABASE:
-    - Print format: (##, ##, ...)
-    """
+    """ PRINT CONTENTS OF A DATABASE """
     for row in data:
         print('(', end='')
         for index in range(0, len(row)):
@@ -44,4 +42,3 @@ def print_db(data):
 if __name__ == "__main__":
     reader = read_db(username, password, database)
     print_db(reader)
-    print(print_db.__doc__)
