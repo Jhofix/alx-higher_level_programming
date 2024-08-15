@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""PRINTS ALL STATES FROM A DATABASE:
+""" PRINTS ALL STATES FROM A DATABASE:
 Usage:
-- Requires 3 command line arguments:\
-  username as uname, password as pwd\
+- Requires 3 command line arguments:
+  username as uname, password as pwd
   and database name as db_name
 """
 
@@ -15,7 +15,7 @@ database = sys.argv[3]
 
 
 def read_db(uname, pwd, db_name):
-    '''READS DATA FROM A DATABASE:
+    ''' READS DATA FROM A DATABASE:
     - Returns a tuple containing the data
     '''
     db = mysql.connect(host='localhost',
@@ -30,7 +30,7 @@ def read_db(uname, pwd, db_name):
 
 
 def print_db(data):
-    '''PRINT CONTENTS OF A DATABASE:
+    ''' PRINT CONTENTS OF A DATABASE:
     - Print format: (##, ##, ...)
     '''
     for row in data:
