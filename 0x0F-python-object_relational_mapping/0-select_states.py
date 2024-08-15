@@ -1,44 +1,16 @@
 #!/usr/bin/python3
 """  lists all states from the database hbtn_0e_0_usa """
-
-import MySQLdb as mysql
+import MySQLdb
 import sys
-
-username = sys.argv[1]
-password = sys.argv[2]
-database = sys.argv[3]
-
-
-def read_db(uname, pwd, db_name):
-    """ READS DATA FROM A DATABASE """
-    db = mysql.connect(host='localhost',
-                       port=3306,
-                       user=uname,
-                       passwd=pwd,
-                       db=db_name)
-    cursor = db.cursor()
-    cursor.execute('SELECT * FROM states')
-    reader = cursor.fetchall()
-    cursor.close
-    db.close
-    return reader
-
-
-def print_db(data):
-    """ PRINT CONTENTS OF A DATABASE """
-    for row in data:
-        print('(', end='')
-        for index in range(0, len(row)):
-            if type(row[index]) == 'string':
-                print('\'' + row[index] + '\'', end='')
-            else:
-                print(row[index], end='')
-            if index < len(row) - 1:
-                print(', ', end='')
-            else:
-                print(')')
 
 
 if __name__ == "__main__":
-    reader = read_db(username, password, database)
-    print_db(reader)
+    db = MySQLdb.connect(host="localhost", user=sys.argv[1],
+                         passwd=sys.argv[2], db=sys.argv[3], port=3306)
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    cur.close()
+    db.close()
