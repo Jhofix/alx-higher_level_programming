@@ -5,6 +5,7 @@
  Attributes:
     username (string): variable username
     password (string): variable password
+    database (string): variable database
  """
 
 import MySQLdb as mysql
@@ -13,7 +14,6 @@ import sys
 username = sys.argv[1]
 password = sys.argv[2]
 database = sys.argv[3]
-'''string: string type variable'''
 
 
 if __name__ == '__main__':
