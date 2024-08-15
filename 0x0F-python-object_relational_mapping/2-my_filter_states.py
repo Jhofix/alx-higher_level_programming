@@ -16,9 +16,8 @@ if __name__ == '__main__':
                        passwd=password,
                        db=database)
     cursor = db.cursor()
-    cursor.execute("SELECT * FROM states WHERE name='" + tag + "'")
+    cursor.execute("SELECT * FROM states WHERE name='{}'".format(tag))
     data = cursor.fetchall()
-    print("SELECT * FROM states WHERE name='%s'".format(tag))
     for elem in data:
         print(elem)
     cursor.close()
