@@ -15,9 +15,9 @@ database = sys.argv[3]
 
 
 def read_db(uname, pwd, db_name):
-    ''' READS DATA FROM A DATABASE:
+    """ READS DATA FROM A DATABASE:
     - Returns a tuple containing the data
-    '''
+    """
     db = mysql.connect(host='localhost',
                        port=3306,
                        user=uname,
@@ -30,9 +30,9 @@ def read_db(uname, pwd, db_name):
 
 
 def print_db(data):
-    ''' PRINT CONTENTS OF A DATABASE:
+    """ PRINT CONTENTS OF A DATABASE:
     - Print format: (##, ##, ...)
-    '''
+    """
     for row in data:
         print('(', end='')
         for index in range(0, len(row)):
