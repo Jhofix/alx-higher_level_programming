@@ -18,7 +18,7 @@ if __name__ == '__main__':
     cursor = db.cursor()
     cursor.execute("SELECT * FROM states WHERE name='" + tag + "'")
     data = cursor.fetchall()
-    print("SELECT * FROM states WHERE name='" + tag + "'")
+    print("SELECT * FROM states WHERE name='%s'".format(tag))
     for elem in data:
         print(elem)
     cursor.close()
