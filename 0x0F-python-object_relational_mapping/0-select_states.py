@@ -1,11 +1,5 @@
 #!/usr/bin/python3
 """  lists all states from the database hbtn_0e_0_usa """
-""" PRINTS ALL STATES FROM A DATABASE: """
-"""Usage:
-- Requires 3 command line arguments:
-  username as uname, password as pwd
-  and database name as db_name
-"""
 
 import MySQLdb as mysql
 import sys
