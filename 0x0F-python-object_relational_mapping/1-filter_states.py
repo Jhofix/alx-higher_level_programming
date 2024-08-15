@@ -3,9 +3,9 @@
  from the database hbtn_0e_0_usa
 
  Attributes:
-    username (string): variable username
-    password (string): variable password
-    database (string): variable database
+    username: variable username
+    password: variable password
+    database: variable database
  """
 
 import MySQLdb as mysql
